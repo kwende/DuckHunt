@@ -1,0 +1,24 @@
+﻿<Window x:Class="DuckHunt.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DuckHunt"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowState="Maximized" WindowStyle="None">
+    <Window.Resources>
+        <RoutedUICommand x:Key="Escape" Text="Escape"></RoutedUICommand>
+    </Window.Resources>
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource Escape}" Executed="EscapeCommandBinding_Executed"></CommandBinding>
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Command="{StaticResource Escape}" Key="Esc"></KeyBinding>
+    </Window.InputBindings>
+    <Window.Background>
+        <ImageBrush ImageSource="/App;component/Images/Background.png"/>
+    </Window.Background>
+    <Grid>
+        <Image x:Name="VideoWindow" Stretch="Fill"></Image>
+    </Grid>
+</Window>
